@@ -1,0 +1,26 @@
+{
+  "name": "node-okex-api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "node-okex-api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://git@github.com/ZhiweiWang/node-okex-api.git"
+  },
+  "author": "Zhiwei Wang",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ZhiweiWang/node-okex-api/issues"
+  },
+  "homepage": "https://github.com/ZhiweiWang/node-okex-api#readme",
+  "dependencies": {
+    "md5": "^2.2.1",
+    "request": "^2.85.0",
+    "string-hash": "^1.1.3",
+    "underscore": "^1.8.3",
+    "ws": "^5.1.0"
+  }
+}

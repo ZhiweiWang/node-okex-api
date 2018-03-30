@@ -284,23 +284,20 @@ module.exports = (function() {
             }
             ws.send(JSON.stringify(channels));
         } else {
-            ws.send(`{'event':'addChannel','channel':'${endpoint}'}`);
+            let channel = { event: "addChannel", channel: endpoint };
+            ws.send(JSON.stringify(channel));
         }
     };
 
-    // Checks whether or not an array contains any duplicate elements
-    // Note(keith1024): at the moment this only works for primitive types,
-    // will require modification to work with objects
     const isArrayUnique = function(array) {
-        return array.every(function(el, pos, arr) {
-            return arr.indexOf(el) === pos;
-        });
+        let s = new Set(array);
+        return s.size == array.length;
     };
     ////////////////////////////
     return {
         candlesticks: function(symbol, type, callback, options = { size: 500 }) {
             if (!callback) return;
-            let params = Object.assign({ symbol: symbol, type }, options);
+            let params = Object.assign({ symbol, type }, options);
 
             publicRequest("kline", params, callback);
         },
